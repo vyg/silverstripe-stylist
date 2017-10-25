@@ -6,6 +6,9 @@
 
 This module adds a `Theme` tab in the admin that allows users/admins to set site wide theme defaults. These generate a css stylesheet that can be used within the main theme css to dynamically style the site.
 
+> Warning: CSS variables are still not available in all browsers. If you need to support IE11 - well just don't. Check [http://caniuse.com/#feat=css-variables](http://caniuse.com/#feat=css-variables) to see what browsers have support.
+
+
 ## Requirements
 
  * SilverStripe > 3.1
@@ -19,7 +22,9 @@ This module adds a `Theme` tab in the admin that allows users/admins to set site
 ### Configuration
 
 In your main theme css set up your code to use css variables like the below example.
-These variables will render to use the variables as set in the `Theme` admin.
+These variables will use the values as set in the `Theme` admin.
+
+For example in your main css you might want to style your sites buttons using the primary and secondary colours. In `themes/base/scss/_buttons.scss` we can have the following code.
 
 ```css
 .btn {
@@ -46,6 +51,7 @@ The following variables are defined in this module. If you require any others fe
     --primary-colour:;
     --secondary-colour:;
     --font-family:;
+    --heading-font-family:;
 }
 
 ```

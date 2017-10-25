@@ -5,6 +5,7 @@ class Theme extends DataObject implements PermissionProvider, TemplateGlobalProv
     private static $db = [
         'PrimaryColour' => 'Varchar(7)',
         'SecondaryColour' => 'Varchar(7)',
+        'HeadingFontFamily' => 'Varchar(255)',
         'FontFamily' => 'Varchar(255)'
     ];
 
@@ -15,7 +16,8 @@ class Theme extends DataObject implements PermissionProvider, TemplateGlobalProv
                 $tabMain = new Tab('Main',
                     new TextField("PrimaryColour", 'Primary Colour'),
                     new TextField("SecondaryColour", 'Secondary Colour'),
-                    new TextField("FontFamily", "Font Family")
+                    new TextField('HeadingFontFamily', 'Heading Font Family'),
+                    new TextField("FontFamily", "Body Font Family")
                 )
             ),
             new HiddenField('ID')
@@ -141,6 +143,7 @@ class Theme extends DataObject implements PermissionProvider, TemplateGlobalProv
   --primary-colour: ' .$theme->PrimaryColour.';
   --secondary-colour: ' . $theme->SecondaryColour . ';
   --font-family: '.$theme->FontFamily.';
+  --heading-font-family: '.$theme->HeadingFontFamily.';
 }';
 
             $directory = ASSETS_PATH . '/css';
