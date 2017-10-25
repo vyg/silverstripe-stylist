@@ -4,7 +4,8 @@ class Theme extends DataObject implements PermissionProvider, TemplateGlobalProv
 {
     private static $db = [
         'PrimaryColour' => 'Varchar(7)',
-        'SecondaryColour' => 'Varchar(7)'
+        'SecondaryColour' => 'Varchar(7)',
+        'FontFamily' => 'Varchar(255)'
     ];
 
     public function getCMSFields()
@@ -12,8 +13,9 @@ class Theme extends DataObject implements PermissionProvider, TemplateGlobalProv
         $fields = new FieldList(
             new TabSet("Root",
                 $tabMain = new Tab('Main',
-                    $titleField = new TextField("PrimaryColour", 'Primary Colour'),
-                    $taglineField = new TextField("SecondaryColour", 'Secondary Colour')
+                    new TextField("PrimaryColour", 'Primary Colour'),
+                    new TextField("SecondaryColour", 'Secondary Colour'),
+                    new TextField("FontFamily", "Font Family")
                 )
             ),
             new HiddenField('ID')
@@ -138,6 +140,7 @@ class Theme extends DataObject implements PermissionProvider, TemplateGlobalProv
 :root {
   --primary-colour: ' .$theme->PrimaryColour.';
   --secondary-colour: ' . $theme->SecondaryColour . ';
+  --font-family: '.$theme->FontFamily.';
 }';
 
             $directory = ASSETS_PATH . '/css';
