@@ -18,7 +18,46 @@ This module adds a `Theme` tab in the admin that allows users/admins to set site
 
 ### Configuration
 
-View example of Default configuration
+In your main theme css set up your code to use css variables like the below example.
+These variables will render to use the variables as set in the `Theme` admin.
+
+```css
+.btn {
+  display: block;
+  padding: 6px 12px;
+}
+
+.btn-primary {
+  background-color: var(--primary-colour);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-colour);
+}
+```
+
+#### Default variables
+
+The following variables are defined in this module. If you require any others feel free to extend or contribute to the module.
+
+```css
+
+:root {    
+    --primary-colour:;
+    --secondary-colour:;
+    --font-family:;
+}
+
+```
+
+## TODO
+
+ * [ ] Ability to change font family in admin
+ * [ ] Convert DB field names to snake-case when compiling CSS
+ * [ ] Convert DB fields to css automatically (currently need to be defined)
+ * [ ] Add colour picker fields to CMS for colour fields
+ * [ ] Tidy things up / Convert to PSR-2
+
 
 ## License
 
