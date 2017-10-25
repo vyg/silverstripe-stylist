@@ -1,0 +1,20 @@
+{
+  "name": "voyage/silverstripe-stylist",
+  "description": "Style your theme from the admin",
+  "type": "silverstripe-module",
+  "keywords": ["silverstripe", "themes", "stylist", "styles"],
+  "authors": [{
+    "name": "Voyage",
+    "email": "support@vyg.co.nz"
+  }, {
+    "name": "Ryan O'Hara",
+    "email": "ryan@vyg.co.nz"
+  }],
+  "require": {
+    "silverstripe/framework": ">=3.1",
+    "silverstripe/cms": ">=3.1"
+  },
+  "extra": {
+    "installer-name": "stylist"
+  }
+}

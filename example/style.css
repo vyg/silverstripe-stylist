@@ -1,0 +1,12 @@
+.btn {
+  display: block;
+  padding: 6px 12px;
+}
+
+.btn-primary {
+  background-color: var(--primary-colour);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-colour);
+}
